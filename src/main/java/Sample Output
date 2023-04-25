@@ -1,0 +1,12 @@
+The Rational number r is: -87/23
+The Rational number r2 is: 3/4
+Ater negation, r2 becomes: -3/4
+After inversion, r2 becomes: 4/-3
+r2 as a double is: -1.3333333333333333
+Now you will add fractions. You will be prompted to enter a numerator and a denominator for each fraction.
+Enter a numerator for the first fraction: 1
+Enter a denominator for the first fraction: 6
+Enter a numerator for the second fraction: 1
+Enter a denominator for the second fraction: 6
+The sum of 1/6 and 1/6 is 1/3
+The sum of 4/-3 and 1/6 is 7/-6

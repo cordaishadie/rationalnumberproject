@@ -62,10 +62,10 @@ public class RationalNumber
         Rational r4 = new Rational(numerator, denominator);
 
         // add the two Rational numbers using the add method and print the result
-        System.out.println("The sum of " + r3 + " and " + r4 + " is " + r3.add(r4));
+        System.out.println("The sum of " + r3.toString() + " and " + r4.toString() + " is " + r3.add(r4).toString());
 
         // add r2 to r3 using the add method and print the result
-        System.out.println("The sum of " + r2 + " and " + r3 + " is " + r2.add(r3));
+        System.out.println("The sum of " + r2.toString() + " and " + r3.toString() + " is " + r2.add(r3).toString());
 
     }
 }
