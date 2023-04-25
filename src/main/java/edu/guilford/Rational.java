@@ -75,22 +75,19 @@ public class Rational {
     }
 
     // method that simplifies the rational number by dividing the numerator and denominator by their greatest common divisor
-    // find the greatest common divisor of two numbers using Euclid's algorithm
-    public int gcd(int a, int b) {
-        // base case
-        if (b == 0) {
-            return a;
-        }
-        // recursive case
-        else {
-            return gcd(b, a % b);
-        }
-    }
-    // divide the numerator and denominator by their greatest common divisor
     public void reduce() {
-        int gcd = gcd(numerator, denominator);
-        numerator = numerator / gcd;
-        denominator = denominator / gcd;
+        // find the greatest common divisor of the numerator and denominator using the Euclidean algorithm
+        int a = numerator;
+        int b = denominator;
+        int r = a % b;
+        while (r != 0) {
+            a = b;
+            b = r;
+            r = a % b;
+        }
+        // divide the numerator and denominator by the greatest common divisor
+        numerator = numerator / b;
+        denominator = denominator / b;
     }
 
     // method that takes a Rational number as an argument, adds it to the rational number represented 
@@ -98,8 +95,11 @@ public class Rational {
     public Rational add(Rational r) {
         // deterimine if the denominators are the same
         if (denominator == r.getDenominator()) {
-            // if the denominators are the same, add the numerators and return a new Rational object
-            return new Rational(numerator + r.getNumerator(), denominator);
+            // if the denominators are the same, add the numerators and return a new Rational object and reduce it
+            int newNumerator = numerator + r.getNumerator();
+            Rational newRational = new Rational(newNumerator, denominator);
+            newRational.reduce();
+            return newRational;
         }
         else {
             // multiple the denominators together to get the common denominator
